@@ -4,7 +4,7 @@
 using namespace std;
 
 int main(int argc, const char *argv[]) {
-    string imageName("/home/ihar/image.jpg");
+    string imageName("/home/jomian7/Desktop/graph_seg_test.JPG");
 
     if (argc > 1) {
         imageName = argv[1];
@@ -18,9 +18,10 @@ int main(int argc, const char *argv[]) {
     }
 
     EGBS egbs = EGBS();
-    egbs.applySegmentation(image, 1500, 20);
+    egbs.applySegmentation(image, 500, 50);
 
     cv::imshow("Modified image", image);
+    cv::imwrite("/home/jomian7/Desktop/output_graph_seg_test.JPG");
 
     // Wait for a keystroke in the window (otherwise the program would end far too quickly)
     cv::waitKey(0);
